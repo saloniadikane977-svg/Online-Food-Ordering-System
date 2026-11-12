@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Food Ordering System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff3e0;
+            margin: 0;
+            text-align: center;
+        }
+
+        header {
+            background: #e65100;
+            color: white;
+            padding: 22px;
+        }
+
+        h2 {
+            color: #bf360c;
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+            padding: 15px;
+        }
+
+        .food {
+            background: white;
+            width: 210px;
+            padding: 18px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        .emoji {
+            font-size: 55px;
+        }
+
+        .food p {
+            color: #e65100;
+            font-weight: bold;
+        }
+
+        button {
+            background: #e65100;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 3px;
+        }
+
+        button:hover {
+            background: #bf360c;
+        }
+
+        .cart, .customer {
+            background: white;
+            padding: 22px;
+            margin: 25px auto;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        input, textarea {
+            padding: 12px;
+            margin: 9px;
+            width: 85%;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        .cart-item {
+            border-bottom: 1px solid #ddd;
+            padding: 12px;
+        }
+
+        footer {
+            background: #e65100;
+            color: white;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🍔 Online Food Ordering System</h1>
+    <p>Delicious Food at Your Doorstep!</p>
+</header>
+
+<h2>🍽️ Our Food Menu</h2>
+
+<div class="menu">
+
+    <div class="food">
+        <div class="emoji">🍕</div>
+        <h3>Cheese Pizza</h3>
+        <p>₹199</p>
+        <button onclick="addCart('Cheese Pizza',199)">Add to Cart</button>
+    </div>
+
+    <div class="food">
+        <div class="emoji">🍔</div>
+        <h3>Veg Burger</h3>
+        <p>₹99</p>
+        <button onclick="addCart('Veg Burger',99)">Add to Cart</button>
+    </div>
+
+    <div class="food">
+        <div class="emoji">🍟</div>
+        <h3>French Fries</h3>
+        <p>₹79</p>
+        <button onclick="addCart('French Fries',79)">Add to Cart</button>
+    </div>
+
+    <div class="food">
+        <div class="emoji">🥪</div>
+        <h3>Veg Sandwich</h3>
+        <p>₹89</p>
+        <button onclick="addCart('Veg Sandwich',89)">Add to Cart</button>
+    </div>
+
+    <div class="food">
+        <div class="emoji">🍢</div>
+        <h3>Paneer Tikka</h3>
+        <p>₹179</p>
+        <button onclick="addCart('Paneer Tikka',179)">Add to Cart</button>
+    </div>
+
+    <div class="food">
+        <div class="emoji">🥟</div>
+        <h3>Veg Momos</h3>
+        <p>₹99</p>
+        <button onclick="addCart('Veg Momos',99)">Add to Cart</button>
+    </div>
+
+    <div class="food">
+        <div class="emoji">🍜</div>
+        <h3>Hakka Noodles</h3>
+        <p>₹129</p>
+        <button onclick="addCart('Hakka Noodles',129)">Add to Cart</button>
+    </div>
+
+    <div class="food">
+        <div class="emoji">🍚</div>
+        <h3>Fried Rice</h3>
+        <p>₹139</p>
+        <button onclick="addCart('Fried Rice',139)">Add to Cart</button>
+    </div>
+
+    <div class="food">
+        <div class="emoji">🥞</div>
+        <h3>Masala Dosa</h3>
+        <p>₹120</p>
+        <button onclick="addCart('Masala Dosa',120)">Add to Cart</button>
+    </div>
+
+    <div class="food">
+        <div class="emoji">🍛</div>
+        <h3>Chole Bhature</h3>
+        <p>₹149</p>
+        <button onclick="addCart('Chole Bhature',149)">Add to Cart</button>
+    </div>
+
+    <div class="food">
+        <div class="emoji">🍲</div>
+        <h3>Paneer Butter Masala</h3>
+        <p>₹199</p>
+        <button onclick="addCart('Paneer Butter Masala',199)">Add to Cart</button>
+    </div>
+
+    <div class="food">
+        <div class="emoji">🍝</div>
+        <h3>Cheese Pasta</h3>
+        <p>₹149</p>
+        <button onclick="addCart('Cheese Pasta',149)">Add to Cart</button>
+    </div>
+
+    <div class="food">
+        <div class="emoji">🥤</div>
+        <h3>Chocolate Shake</h3>
+        <p>₹100</p>
+        <button onclick="addCart('Chocolate Shake',100)">Add to Cart</button>
+    </div>
+
+    <div class="food">
+        <div class="emoji">🍫</div>
+        <h3>Chocolate Brownie</h3>
+        <p>₹89</p>
+        <button onclick="addCart('Chocolate Brownie',89)">Add to Cart</button>
+    </div>
+
+    <div class="food">
+        <div class="emoji">🍨</div>
+        <h3>Vanilla Ice Cream</h3>
+        <p>₹59</p>
+        <button onclick="addCart('Vanilla Ice Cream',59)">Add to Cart</button>
+    </div>
+
+</div>
+
+<!-- CART SECTION -->
+
+<div class="cart">
+
+    <h2>🛒 My Cart</h2>
+
+    <div id="cartItems">No items added</div>
+
+    <h3>Total: ₹<span id="total">0</span></h3>
+
+</div>
+
+<!-- CUSTOMER DETAILS -->
+
+<div class="customer">
+
+    <h2>👤 Customer Details</h2>
+
+    <form action="/save_customer" method="POST"
+          onsubmit="return validateCart()">
+
+        <input type="text"
+               name="name"
+               placeholder="Enter Your Name"
+               required>
+        <br>
+
+        <input type="email"
+               name="email"
+               placeholder="Enter Your Email"
+               required>
+        <br>
+
+        <input type="tel"
+               name="mobile"
+               placeholder="Enter Mobile Number"
+               pattern="[0-9]{10}"
+               maxlength="10"
+               required>
+        <br>
+
+        <textarea name="address"
+                  placeholder="Enter Your Address"
+                  required></textarea>
+        <br>
+
+        <input type="hidden"
+               name="total_amount"
+               id="total_amount"
+               value="0">
+
+        <input type="hidden"
+               name="cart_items"
+               id="cart_items">
+
+        <button type="submit">Place Order</button>
+
+    </form>
+
+</div>
+
+<footer>
+    <p>Thank You for Visiting ❤️</p>
+    <p>Online Food Ordering System</p>
+</footer>
+
+<script>
+
+let total = 0;
+let items = [];
+
+function addCart(name, price) {
+
+    let existing = items.find(item => item.name === name);
+
+    if (existing) {
+        existing.qty++;
+    } else {
+        items.push({
+            name: name,
+            price: price,
+            qty: 1
+        });
+    }
+
+    updateCart();
+}
+
+function changeQty(index, change) {
+
+    items[index].qty += change;
+
+    if (items[index].qty <= 0) {
+        items.splice(index, 1);
+    }
+
+    updateCart();
+}
+
+function removeItem(index) {
+
+    items.splice(index, 1);
+
+    updateCart();
+}
+
+function updateCart() {
+
+    total = 0;
+
+    let html = "";
+
+    items.forEach((item, index) => {
+
+        let amount = item.price * item.qty;
+
+        total += amount;
+
+        html += `
+            <div class="cart-item">
+
+                <h3>${item.name}</h3>
+
+                Price: ₹${item.price}
+
+                <br><br>
+
+                <button type="button"
+                onclick="changeQty(${index}, -1)">-</button>
+
+                ${item.qty}
+
+                <button type="button"
+                onclick="changeQty(${index}, 1)">+</button>
+
+                <br><br>
+
+                Subtotal: ₹${amount}
+
+                <br><br>
+
+                <button type="button"
+                onclick="removeItem(${index})">
+                Remove Item
+                </button>
+
+            </div>
+        `;
+
+    });
+
+    document.getElementById("cartItems").innerHTML =
+        items.length > 0 ? html : "No items added";
+
+    document.getElementById("total").innerText = total;
+
+    document.getElementById("total_amount").value = total;
+
+    document.getElementById("cart_items").value =
+        JSON.stringify(items);
+}
+
+function validateCart() {
+
+    if (items.length === 0) {
+        alert("Please add food items to your cart!");
+        return false;
+    }
+
+    return true;
+}
+
+</script>
+
+</body>
+</html>
